@@ -1,5 +1,6 @@
-todo_list = {
-    'todo1': {'task': 'build an API'},
-    'todo2': {'task': '?????'},
-    'todo3': {'task': 'profit!'},
-}
+todo_list = [
+    {'id': 1, 'task': 'build an API', 'done': False},
+    {'id': 2, 'task': '?????', 'done': True},
+    {'id': 3, 'task': 'profit!', 'done': False},
+]
+
