@@ -15,6 +15,7 @@
   "dependencies": {
     "bower": "*",
     "grunt-cli": "*",
+    "coffeelint": "~1.14",
     "grunt": "~0.4.1",
     "grunt-bump": "0.0.6",
     "grunt-coffeelint": "~0.0.10",
