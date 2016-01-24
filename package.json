@@ -37,6 +37,6 @@
     "karma-jasmine": "^0.1.5"
   },
   "scripts": {
-      "postinstall": "bower install && grunt"
+      "postinstall": "./node_modules/bower/bin/bower install && ./node_modules/grunt-cli/bin/grunt"
   }
 }
