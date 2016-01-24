@@ -36,8 +36,8 @@ angular.module( 'ngBoilerplate.todo', [
     var new_todo = new Todo();
     new_todo.task = $scope.formTodoText;
     new_todo.done = false;
-    Todo.save(new_todo, function() {
-        $scope.todo_list.push({task:new_todo.task, done:new_todo.done});
+    new_todo.$save(function() {
+        $scope.todo_list.push(new_todo);
         $scope.formTodoText = '';
     });
   };
@@ -48,6 +48,15 @@ angular.module( 'ngBoilerplate.todo', [
     return true;
   };
 
+  $scope.clearCompleted = function () {
+
+      $scope.todo_list = $scope.todo_list.filter(function(todo){
+          if (todo.done) {
+              todo.$delete();
+          }
+          return !todo.done;
+      });
+  };
 })
 
 ;
