@@ -3,13 +3,15 @@ angular.module( 'ngBoilerplate.todo', [
   'ngResource'
 ])
 
-.factory('Todo', function($resource) {
-  return $resource('http://localhost:5000/api_v1/todos/:id', { id: '@id' }, {
+.constant('REST_END_POINT', 'http://localhost:5000/')
+
+.factory('Todo', ['$resource', 'REST_END_POINT', function($resource, REST_END_POINT) {
+  return $resource(REST_END_POINT + 'api_v1/todos/:id', { id: '@id' }, {
     update: {
       method: 'PUT' // this method issues a PUT request
     }
   });
-})
+}])
 
 .config(function config( $stateProvider ) {
   $stateProvider.state( 'todo', {
